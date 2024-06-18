@@ -1021,13 +1021,22 @@ abstract class DataTableAbstract implements DataTable
      * @param  int  $index
      * @return string
      */
-    protected function getColumnNameByIndex(int $index): string
+    protected function getColumnNameByIndex($index): string
     {
         $name = (isset($this->columns[$index]) && $this->columns[$index] != '*')
-            ? $this->columns[$index]
+            ? $this->convertExpressionToIndex($this->columns[$index])
             : $this->getPrimaryKeyName();
 
         return in_array($name, $this->extraColumns, true) ? $this->getPrimaryKeyName() : $name;
+    }
+
+    protected function convertExpressionToIndex($index)
+    {
+        if($index instanceof \Illuminate\Database\Query\Expression)
+        {
+            return $index->getValue(\Illuminate\Support\Facades\DB::connection()->getQueryGrammar());
+        }
+        return $index;
     }
 
     /**
