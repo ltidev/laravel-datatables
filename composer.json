@@ -15,15 +15,15 @@
   ],
   "require": {
     "php": "^8.0.2",
-    "illuminate/database": "^9|^10|^11.0",
-    "illuminate/filesystem": "^9|^10|^11.0",
-    "illuminate/http": "^9|^10|^11.0",
-    "illuminate/support": "^9|^10|^11.0",
-    "illuminate/view": "^9|^10|^11.0"
+    "illuminate/database": "^9|^10",
+    "illuminate/filesystem": "^9|^10",
+    "illuminate/http": "^9|^10",
+    "illuminate/support": "^9|^10",
+    "illuminate/view": "^9|^10"
   },
   "require-dev": {
     "nunomaduro/larastan": "^2.4",
-    "orchestra/testbench": "^8|^9.0",
+    "orchestra/testbench": "^8",
     "yajra/laravel-datatables-html": "^9.3.4|^10"
   },
   "suggest": {
